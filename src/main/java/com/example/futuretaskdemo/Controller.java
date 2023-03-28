@@ -8,9 +8,11 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class Controller implements Initializable {
     public Button btn1;
     public Label lbl1;
+
 
 
     @FXML
@@ -21,6 +23,11 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        for (int i = 0; i <10 ; i++) {
+            Thread thread = new Thread(new Task());
+            thread.start();
+
+        }
 
     }
 }
