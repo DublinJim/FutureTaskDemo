@@ -26,7 +26,7 @@ public class Controller implements Initializable {
         for (int i = 0; i <10 ; i++) {
             Thread thread = new Thread(new Task());
             thread.start();
-
+            System.out.println("new stuff");
         }
 
     }
