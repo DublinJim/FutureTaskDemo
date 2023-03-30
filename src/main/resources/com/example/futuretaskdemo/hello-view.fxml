@@ -12,5 +12,5 @@
   </padding>
 
   <Label fx:id="lbl1"/>
-  <Button fx:id="btn1" text="Hello!" onAction="#onHelloButtonClick"/>
+  <Button fx:id="btn1" text="Hello!" onAction="#exitTheStage"/>
 </VBox>

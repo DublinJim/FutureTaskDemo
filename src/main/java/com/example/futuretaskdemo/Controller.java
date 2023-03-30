@@ -1,5 +1,6 @@
 package com.example.futuretaskdemo;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -14,21 +15,30 @@ public class Controller implements Initializable {
     public Label lbl1;
 
 
-
     @FXML
-    protected void onHelloButtonClick() {
-        lbl1.setText("Welcome to JavaFX Application!");
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        OtherClass.hello();
 
-        for (int i = 0; i <10 ; i++) {
+        for (int i = 0; i <3 ; i++) {
             Thread thread = new Thread(new Task());
             thread.start();
-            System.out.println("new stuff");
-            System.out.println("adds more ");
+
         }
 
+        lbl1.setText("Threads");
+        btn1.setText("Exit");
+
+        System.out.println("task 2");
+        OtherClass otherClass= new OtherClass(3,4,"Joey");
+        otherClass.getTotal();
+        OtherClass.hello();
+
     }
+
+    public void exitTheStage() {
+        Platform.exit();
+    }
+
 }
